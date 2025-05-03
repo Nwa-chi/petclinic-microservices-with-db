@@ -1,0 +1,4 @@
+aws iam put-role-policy \
+  --role-name petclinic-jenkins-server-role \
+  --policy-name ecr-push-policy \
+  --policy-document file://ecr-push-policy.json

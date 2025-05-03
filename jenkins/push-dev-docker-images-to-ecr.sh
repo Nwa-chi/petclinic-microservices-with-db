@@ -1,5 +1,5 @@
 # Provide credentials for Docker to login the AWS ECR and push the images
-aws ecr get-login-password --region "$"us-east-1"" | docker login --username AWS --password-stdin $"046402772087.dkr.ecr.us-east-1.amazonaws.com"
+aws ecr get-login-password --region "us-east-1"" | docker login --username AWS --password-stdin "046402772087.dkr.ecr.us-east-1.amazonaws.com"
 docker push "${IMAGE_TAG_ADMIN_SERVER}"
 docker push "${IMAGE_TAG_API_GATEWAY}"
 docker push "${IMAGE_TAG_CONFIG_SERVER}"

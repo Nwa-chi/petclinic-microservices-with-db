@@ -1,5 +1,6 @@
 # Provide credentials for Docker to login the AWS ECR and push the images
-aws ecr get-login-password --region "us-east-1"" | docker login --username AWS --password-stdin ECR_REGISTRY="314146305101.dkr.ecr.us-east-1.amazonaws.com/clarusway-repo/petclinic-app-dev"
+#{Original from Readme}aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY}
+aws ecr get-login-password --region "us-east-1" | docker login --username AWS --password-stdin "$ECR_REGISTRY"
 docker push "${IMAGE_TAG_ADMIN_SERVER}"
 docker push "${IMAGE_TAG_API_GATEWAY}"
 docker push "${IMAGE_TAG_CONFIG_SERVER}"
